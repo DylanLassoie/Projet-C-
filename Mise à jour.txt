@@ -4,7 +4,9 @@
 
 - Création branche Analyse
 - Création branche Documentation
-- Push doc Mise à jour
+- Push doc Mise à jour branche Documentation
+- Push image Diagramme de classe jeux video branche Analyse
+- Push image Diagramme logique jeux video branche Analyse
 
 
 ----------------------------------------------------------------------------------------------------------------
