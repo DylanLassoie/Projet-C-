@@ -1,0 +1,21 @@
+C:\Users\ranau\source\repos\Projet C\Projet C\bin\Debug\net6.0-windows\Projet C.exe
+C:\Users\ranau\source\repos\Projet C\Projet C\bin\Debug\net6.0-windows\Projet C.deps.json
+C:\Users\ranau\source\repos\Projet C\Projet C\bin\Debug\net6.0-windows\Projet C.runtimeconfig.json
+C:\Users\ranau\source\repos\Projet C\Projet C\bin\Debug\net6.0-windows\Projet C.dll
+C:\Users\ranau\source\repos\Projet C\Projet C\bin\Debug\net6.0-windows\Projet C.pdb
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.csproj.AssemblyReference.cache
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C_MarkupCompile.cache
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C_MarkupCompile.lref
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.g.resources
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.AssemblyInfoInputs.cache
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.AssemblyInfo.cs
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.csproj.CoreCompileInputs.cache
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.dll
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\refint\Projet C.dll
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.pdb
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\Projet C.genruntimeconfig.cache
+C:\Users\ranau\source\repos\Projet C\Projet C\obj\Debug\net6.0-windows\ref\Projet C.dll
