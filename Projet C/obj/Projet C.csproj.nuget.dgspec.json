@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ranau\\source\\repos\\Projet C\\Projet C\\Projet C.csproj": {}
+    "C:\\Users\\ranau\\Source\\Repos\\Projet-C2\\Projet C\\Projet C.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ranau\\source\\repos\\Projet C\\Projet C\\Projet C.csproj": {
+    "C:\\Users\\ranau\\Source\\Repos\\Projet-C2\\Projet C\\Projet C.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ranau\\source\\repos\\Projet C\\Projet C\\Projet C.csproj",
+        "projectUniqueName": "C:\\Users\\ranau\\Source\\Repos\\Projet-C2\\Projet C\\Projet C.csproj",
         "projectName": "Projet C",
-        "projectPath": "C:\\Users\\ranau\\source\\repos\\Projet C\\Projet C\\Projet C.csproj",
+        "projectPath": "C:\\Users\\ranau\\Source\\Repos\\Projet-C2\\Projet C\\Projet C.csproj",
         "packagesPath": "C:\\Users\\ranau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ranau\\source\\repos\\Projet C\\Projet C\\obj\\",
+        "outputPath": "C:\\Users\\ranau\\Source\\Repos\\Projet-C2\\Projet C\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ranau\\AppData\\Roaming\\NuGet\\NuGet.Config",
