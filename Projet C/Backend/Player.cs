@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Projet_C.Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-public class Player
+public class Player : User
 {
     private int credit;
     private string pseudo;
@@ -11,14 +12,16 @@ public class Player
     private DateTime dateOfBirth;
     public Player(string pseudo, DateTime rd, DateTime dob)
 	{
-        credit= 0;
+        Credit = 0;
         this.pseudo= pseudo;
-        registrationDate = rd;  
-        dateOfBirth = dob;  
+        RegistrationDate = rd;  
+        DateOfBirth = dob;  
 	}
-    public int credit { get; set; }
-    public string credit { get; set; }
-    public DateTime registrationDate { get; set; }
-    public DateTime dateOfBirth { get; set; }
+
+    public int Credit { get; set; }
+    public string Pseudo { get; set; }
+
+    public DateTime RegistrationDate { get; set; }
+    public DateTime DateOfBirth { get; set; }
 
 }

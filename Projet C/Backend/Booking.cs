@@ -9,12 +9,12 @@ public class Booking
 	private DateTime bookingDate;
 	public Booking(DateTime bd)
 	{
-		bookingDate= bd;	
+		BookingDate= bd;	
 	}
 	public void Delete()
 	{
-        bookingDate= null;
+        //BookingDate= 0;
 
     }
-	public DateTime bookingDate { get; set; }
+	public DateTime BookingDate { get; set; }
 }
