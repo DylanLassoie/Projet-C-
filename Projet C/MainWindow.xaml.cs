@@ -56,7 +56,7 @@ namespace Projet_C
             dg_user.ItemsSource = Dao.GetUsers();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
         {
             string pwd = Dao.GetPwdByUserName(login_user.Text);
             if (login_pwd.Password != pwd)
@@ -67,6 +67,11 @@ namespace Projet_C
             }
 
             Login_ui.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void ButtonReg_OnClick(object sender, RoutedEventArgs e)
+        {
 
         }
     }

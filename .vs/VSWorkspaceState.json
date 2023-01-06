@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Projet C",
-    "\\Projet C\\Backend"
+    "\\Projet C\\Backend",
+    "\\Projet C\\Management"
   ],
-  "SelectedNode": "\\Projet C\\MainWindow.xaml",
+  "SelectedNode": "\\Projet C\\Management\\Dao.cs",
   "PreviewInSolutionExplorer": false
 }

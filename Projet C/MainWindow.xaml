@@ -37,7 +37,7 @@
         <Grid Grid.Row="0" Grid.Column="1" x:Name="grid_user_loan" Visibility="Collapsed">
             <Label>loan management</Label>
         </Grid>
-
+        <!--Page de Connection-->
         <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="MediumAquamarine" x:Name="Login_ui">
             <Border CornerRadius="15" Padding="25" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="100">
@@ -52,10 +52,17 @@
                         <PasswordBox FontSize="22" x:Name="login_pwd"  BorderThickness="0,0,0,2" BorderBrush="DarkGray" ></PasswordBox>
                     </DockPanel>
                     <Label FontWeight="DemiBold" Foreground="DarkRed" Visibility="Collapsed" Margin="0,0,0,5" x:Name="login_error_text">Wrong user/password</Label>
-                    <Button Click="ButtonBase_OnClick" Background="Transparent" BorderBrush="Transparent">
+                    <Button Click="ButtonLogin_OnClick" Background="Transparent" BorderBrush="Transparent">
                         <Border CornerRadius="5" Background="MediumAquamarine" Padding="5,0">
                             <Label>Connection</Label>
                         </Border>
+                        
+                    </Button>
+                    <Button Click="ButtonBase_OnClick" Background="Transparent" BorderBrush="Transparent">
+                        <Border CornerRadius="5" Background="DodgerBlue" Padding="5,0">
+                            <Label>Inscription</Label>
+                        </Border>
+
                     </Button>
                 </StackPanel>
             </Border>
