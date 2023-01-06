@@ -1,6 +1,8 @@
-﻿using Projet_C.Management;
+﻿using Projet_C.Backend;
+using Projet_C.Management;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace Projet_C
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Dao dao= new Dao();
         public MainWindow()
         {
             InitializeComponent();
@@ -53,13 +56,14 @@ namespace Projet_C
 
         private void ShowUserList()
         {
-            dg_user.ItemsSource = Dao.GetUsers();
+            dg_user.ItemsSource = dao.ReadAllAdmins();
         }
 
         private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
         {
-            string pwd = Dao.GetPwdByUserName(login_user.Text);
-            if (login_pwd.Password != pwd)
+            Admin ad = dao.ReadByAdminUnique(login_user.Text,login_pwd.Password);
+            //Trace.WriteLine(login_user.Text+ " "+ login_pwd.Password);
+            if (ad==null)
             {
                 login_error_text.Visibility = Visibility.Visible;
                 login_pwd.Password = string.Empty;

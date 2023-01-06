@@ -58,7 +58,7 @@
                         </Border>
                         
                     </Button>
-                    <Button Click="ButtonBase_OnClick" Background="Transparent" BorderBrush="Transparent">
+                    <Button Click="ButtonReg_OnClick" Background="Transparent" BorderBrush="Transparent">
                         <Border CornerRadius="5" Background="DodgerBlue" Padding="5,0">
                             <Label>Inscription</Label>
                         </Border>

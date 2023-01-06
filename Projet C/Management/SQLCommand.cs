@@ -10,7 +10,7 @@ namespace Projet_C.Management
 {
     internal class SQLCommand
     {
-        private static void CreateCommand(string queryString)
+        public static void CreateCommand(string queryString)
         {
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString))
             {
