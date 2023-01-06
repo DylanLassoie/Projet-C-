@@ -1,0 +1,44 @@
+﻿<Window x:Class="Projet_C.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_C"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="920"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <RadioButton Content="Register"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="32"
+                             Style="{StaticResource MainButtonTheme}">
+                   
+                </RadioButton>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Sign">
+                    
+                </RadioButton>
+            </StackPanel>
+        </Grid>
+    </Border>
+  
+</Window>
