@@ -10,9 +10,9 @@ public class VideoGame
 	private string console;
 	private int creditCost;
 
-	public VideoGame(int id, string name)
+	public VideoGame(string name, string cons)
 	{
-		Id=id;
+		Console=cons;
 		Name=name;
 	}
     public int Id { get; set; }

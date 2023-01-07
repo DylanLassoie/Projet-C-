@@ -27,7 +27,7 @@ namespace Projet_C.Management
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    pl = new Player( reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2)};
+                    pl = new Player(reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
                     list.Add(pl);
                 }
             }
@@ -89,7 +89,7 @@ namespace Projet_C.Management
             if (connection.State == ConnectionState.Closed)
                 connection.Open();
 
-            Player pl= null;
+            Player pl = null;
             try
             {
                 cmd.CommandType = CommandType.Text;
@@ -137,7 +137,7 @@ namespace Projet_C.Management
             return true;
         }
 
-        public Boolean Delete(Player pl )
+        public Boolean Delete(Player pl)
         {
 
             connection.Open();

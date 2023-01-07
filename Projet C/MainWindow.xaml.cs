@@ -25,6 +25,7 @@ namespace Projet_C
     {
         private DaoAdmin dao= new DaoAdmin();
         private DaoPlayer daoP= new DaoPlayer();
+        private DaoVideoGame daoVG= new DaoVideoGame();
         public MainWindow()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace Projet_C
 
         private void ShowUserList()
         {
-            dg_user.ItemsSource = daoP.ReadAll();
+            dg_user.ItemsSource = daoVG.ReadAll();
         }
 
         private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
@@ -80,9 +81,20 @@ namespace Projet_C
             //Admin ad= new Admin(){ Username="Test",Password="Test"};
 
             //Trace.WriteLine( dao.Delete(ad));
-            Player player = daoP.ReadUser("Insert");
-
-            Trace.WriteLine(daoP.Delete(player));
+            VideoGame vd = daoVG.ReadByID(1);
+            /*VideoGame vd2 = daoVG.ReadName("Risk")[0];
+            vd.Name=("TestInsertViaReadID");
+            vd2.Name=("TestInsertViaReadName");
+            Trace.WriteLine(daoVG.Insert(vd));
+            */
+            vd.Id = 6;
+            Trace.WriteLine(daoVG.Delete(vd));
+            vd.Id = 7;
+            Trace.WriteLine(daoVG.Delete(vd));
+            vd.Id = 8;
+            Trace.WriteLine(daoVG.Delete(vd));
+            vd.Id = 9;
+            Trace.WriteLine(daoVG.Delete(vd));
 
         }
     }
