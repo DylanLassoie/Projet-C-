@@ -26,6 +26,7 @@ namespace Projet_C
         private DaoAdmin dao= new DaoAdmin();
         private DaoPlayer daoP= new DaoPlayer();
         private DaoVideoGame daoVG= new DaoVideoGame();
+        private DaoCopy daoCP= new DaoCopy();
         public MainWindow()
         {
             InitializeComponent();
@@ -63,7 +64,7 @@ namespace Projet_C
 
         private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
         {
-            Admin ad = dao.ReadByUnique(login_user.Text,login_pwd.Password);
+            Admin  ad = dao.ReadByUnique(login_user.Text,login_pwd.Password);
             //Trace.WriteLine(login_user.Text+ " "+ login_pwd.Password);
             if (ad==null)
             {
@@ -78,24 +79,23 @@ namespace Projet_C
 
         private void ButtonReg_OnClick(object sender, RoutedEventArgs e)
         {
-            //Admin ad= new Admin(){ Username="Test",Password="Test"};
+            //Copy ad= new Copy(){ Username="Test",Password="Test"};
 
             //Trace.WriteLine( dao.Delete(ad));
-            VideoGame vd = daoVG.ReadByID(1);
+         
+            Copy cp;
+            Copy cp2;
             /*VideoGame vd2 = daoVG.ReadName("Risk")[0];
             vd.Name=("TestInsertViaReadID");
             vd2.Name=("TestInsertViaReadName");
             Trace.WriteLine(daoVG.Insert(vd));
             */
-            vd.Id = 6;
-            Trace.WriteLine(daoVG.Delete(vd));
-            vd.Id = 7;
-            Trace.WriteLine(daoVG.Delete(vd));
-            vd.Id = 8;
-            Trace.WriteLine(daoVG.Delete(vd));
-            vd.Id = 9;
-            Trace.WriteLine(daoVG.Delete(vd));
 
+            cp = daoCP.ReadByID(5);
+            cp2 = daoCP.ReadByID(6);
+            
+            daoCP.Delete(cp);
+            daoCP.Delete(cp2);
         }
     }
 }

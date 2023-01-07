@@ -41,7 +41,8 @@ namespace Projet_C.Management
         }
         public VideoGame ReadByID(int ID)
         {
-            connection.Open();
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
             VideoGame vd = null;
             try
             {

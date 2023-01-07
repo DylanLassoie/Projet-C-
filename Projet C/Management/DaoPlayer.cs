@@ -28,6 +28,7 @@ namespace Projet_C.Management
                 while (reader.Read())
                 {
                     pl = new Player(reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
+                    pl.Credit= reader.GetInt32(6);
                     list.Add(pl);
                 }
             }
@@ -42,7 +43,8 @@ namespace Projet_C.Management
         }
         public Player ReadByID(int ID)
         {
-            connection.Open();
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
             Player pl = null;
             try
             {
@@ -54,6 +56,7 @@ namespace Projet_C.Management
                 while (reader.Read())
                 {
                     pl = new Player(reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
+                    pl.Credit = reader.GetInt32(6);
                 }
             }
             catch (Exception ex) { Trace.Write(ex.Message); }
@@ -77,6 +80,7 @@ namespace Projet_C.Management
                 while (reader.Read())
                 {
                     pl = new Player(reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
+                    pl.Credit = reader.GetInt32(6);
                 }
             }
             catch (Exception ex) { Trace.WriteLine(ex.Message); }
@@ -100,6 +104,7 @@ namespace Projet_C.Management
                 while (reader.Read())
                 {
                     pl = new Player(reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
+                    pl.Credit = reader.GetInt32(6);
                 }
             }
             catch (Exception ex) { Trace.WriteLine(ex.Message); }
@@ -121,12 +126,13 @@ namespace Projet_C.Management
             try
             {
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into dbo.Players(username,password,pseudo,registrationdate,dateofbirth) values(@USER,@PWD,@PSEU,@RD,@DOB)";
+                cmd.CommandText = "insert into dbo.Players(username,password,pseudo,registrationdate,dateofbirth,Credit) values(@USER,@PWD,@PSEU,@RD,@DOB,@CRD)";
                 cmd.Parameters.AddWithValue("USER", pl.Username);
                 cmd.Parameters.AddWithValue("PWD", pl.Password);
                 cmd.Parameters.AddWithValue("PSEU", pl.Pseudo);
                 cmd.Parameters.AddWithValue("RD", pl.RegistrationDate);
                 cmd.Parameters.AddWithValue("DOB", pl.DateOfBirth);
+                cmd.Parameters.AddWithValue("CRD", pl.Credit);
                 cmd.ExecuteNonQuery();
 
             }

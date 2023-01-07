@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_C.Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,11 @@ public class VideoGame
 	{
 		Console=cons;
 		Name=name;
-	}
+
+    }
     public int Id { get; set; }
     public string Name { get; set; }
     public string Console { get; set; }
     public int CreditCost { get; set; }
+
 }

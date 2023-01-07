@@ -23,7 +23,7 @@ namespace Projet_C.Management
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from dbo.Admins";
 
-            
+
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
@@ -31,7 +31,7 @@ namespace Projet_C.Management
                     list.Add(ad);
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 Trace.Write(ex.Message);
             }
@@ -46,16 +46,17 @@ namespace Projet_C.Management
             Admin ad = null;
             try
             {
-                    cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from dbo.Admins where ID=@ID";
                 cmd.Parameters.AddWithValue("ID", ID);
                 reader = cmd.ExecuteReader();
-            
+
                 while (reader.Read())
                 {
                     ad = new Admin { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
                 }
-            }catch(Exception ex) {Trace.Write(ex.Message); } 
+            }
+            catch (Exception ex) { Trace.Write(ex.Message); }
             connection.Close();
             cmd.Parameters.Clear();
             return ad;
@@ -72,7 +73,7 @@ namespace Projet_C.Management
                 cmd.Parameters.AddWithValue("USER", user);
                 cmd.Parameters.AddWithValue("PWD", pwd);
                 reader = cmd.ExecuteReader();
-            
+
                 while (reader.Read())
                 {
                     ad = new Admin { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
@@ -85,7 +86,7 @@ namespace Projet_C.Management
         }
         public Admin ReadUser(String user)
         {
-            if(connection.State==ConnectionState.Closed)
+            if (connection.State == ConnectionState.Closed)
                 connection.Open();
 
             Admin ad = null;
@@ -95,10 +96,10 @@ namespace Projet_C.Management
                 cmd.CommandText = "select * from dbo.Admins where username=@USER";
                 cmd.Parameters.AddWithValue("USER", user);
                 reader = cmd.ExecuteReader();
-                
+
                 while (reader.Read())
                 {
-                    ad = new Admin { Id_User= reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
+                    ad = new Admin { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
                 }
             }
             catch (Exception ex) { Trace.WriteLine(ex.Message); }
@@ -109,12 +110,12 @@ namespace Projet_C.Management
 
         public Boolean Insert(Admin ad)
         {
-            
-            if (ReadUser(ad.Username)!=null)
+
+            if (ReadUser(ad.Username) != null)
             {
-                
+
                 return false;
-                
+
             }
             connection.Open();
             try
@@ -124,7 +125,7 @@ namespace Projet_C.Management
                 cmd.Parameters.AddWithValue("USER", ad.Username);
                 cmd.Parameters.AddWithValue("PWD", ad.Password);
                 cmd.ExecuteNonQuery();
-                
+
             }
             catch (Exception ex) { Trace.WriteLine(ex.Message); }
 
