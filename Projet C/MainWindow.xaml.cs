@@ -24,6 +24,7 @@ namespace Projet_C
     public partial class MainWindow : Window
     {
         private DaoAdmin dao= new DaoAdmin();
+        private DaoPlayer daoP= new DaoPlayer();
         public MainWindow()
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace Projet_C
 
         private void ShowUserList()
         {
-            dg_user.ItemsSource = dao.ReadAll();
+            dg_user.ItemsSource = daoP.ReadAll();
         }
 
         private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
@@ -76,9 +77,12 @@ namespace Projet_C
 
         private void ButtonReg_OnClick(object sender, RoutedEventArgs e)
         {
-            Admin ad= new Admin(){ Username="Test",Password="Test"};
-            ad = dao.ReadUser(ad.Username);
-            Trace.WriteLine( dao.Delete(ad));
+            //Admin ad= new Admin(){ Username="Test",Password="Test"};
+
+            //Trace.WriteLine( dao.Delete(ad));
+            Player player = daoP.ReadUser("Insert");
+
+            Trace.WriteLine(daoP.Delete(player));
 
         }
     }
