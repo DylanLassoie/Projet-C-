@@ -82,20 +82,12 @@ namespace Projet_C
             //Copy ad= new Copy(){ Username="Test",Password="Test"};
 
             //Trace.WriteLine( dao.Delete(ad));
-         
-            Copy cp;
-            Copy cp2;
-            /*VideoGame vd2 = daoVG.ReadName("Risk")[0];
-            vd.Name=("TestInsertViaReadID");
-            vd2.Name=("TestInsertViaReadName");
-            Trace.WriteLine(daoVG.Insert(vd));
-            */
 
-            cp = daoCP.ReadByID(5);
-            cp2 = daoCP.ReadByID(6);
+            VideoGame ad;
+            ad = daoVG.ReadByID(3);
+            ad.Name="Battlefield1";
             
-            daoCP.Delete(cp);
-            daoCP.Delete(cp2);
+            daoVG.Update(ad);
         }
     }
 }

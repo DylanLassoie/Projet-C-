@@ -15,7 +15,7 @@ namespace Projet_C.Backend
         public Copy(VideoGame vd, Player pl)
         {
             Vd = vd;
-            pl_Owner= pl;
+            Pl_owner = pl;
         }
         public int Id { get; set; }
         public VideoGame Vd { get; set; }

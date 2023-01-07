@@ -54,7 +54,7 @@ namespace Projet_C.Management
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
-                {
+                { 
                     pl = new Player(reader.GetString(3), reader.GetDateTime(4), reader.GetDateTime(5)) { Id_User = reader.GetInt32(0), Username = reader.GetString(1), Password = reader.GetString(2) };
                     pl.Credit = reader.GetInt32(6);
                 }
@@ -66,7 +66,8 @@ namespace Projet_C.Management
         }
         public Player ReadByUnique(String user, String pwd)
         {
-            connection.Open();
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
 
             Player pl = null;
             try
@@ -160,6 +161,29 @@ namespace Projet_C.Management
             cmd.Parameters.Clear();
             connection.Close();
             return true;
+        }
+        public void update(Player pl)
+        {
+           
+            connection.Open();
+            try
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update dbo.Players set username=@USER,password=@PWD,pseudo=@PSEU,registrationdate=@RD,dateofbirth=@DOB,Credit=@CRD where ID=@ID ";
+                cmd.Parameters.AddWithValue("USER", pl.Username);
+                cmd.Parameters.AddWithValue("PWD", pl.Password);
+                cmd.Parameters.AddWithValue("PSEU", pl.Pseudo);
+                cmd.Parameters.AddWithValue("RD", pl.RegistrationDate);
+                cmd.Parameters.AddWithValue("DOB", pl.DateOfBirth);
+                cmd.Parameters.AddWithValue("CRD", pl.Credit);
+                cmd.Parameters.AddWithValue("ID", pl.Id_User);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex) { Trace.WriteLine(ex.Message); }
+
+            cmd.Parameters.Clear();
+            connection.Close();
         }
     }
 }

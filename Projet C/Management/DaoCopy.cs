@@ -35,7 +35,8 @@ namespace Projet_C.Management
                 while (reader.Read())
                 {
 
-                    ad = new Copy(DVG.ReadByID(reader.GetInt32(1)),DP.ReadByID(2));
+                    ad = new Copy(DVG.ReadByID(reader.GetInt32(1)), DP.ReadByID(reader.GetInt32(2)));
+                    
                     ad.Id= reader.GetInt32(0);
                     if(!reader.IsDBNull(3))
                     {
@@ -67,7 +68,7 @@ namespace Projet_C.Management
 
                 while (reader.Read())
                 {
-                    ad = new Copy(DVG.ReadByID(reader.GetInt32(1)), DP.ReadByID(2));
+                    ad = new Copy(DVG.ReadByID(reader.GetInt32(1)), DP.ReadByID(reader.GetInt32(2)));
                     ad.Id = reader.GetInt32(0);
                     if (!reader.IsDBNull(3))
                     {
@@ -95,7 +96,7 @@ namespace Projet_C.Management
 
                 while (reader.Read())
                 {
-                    ad = new Copy(DVG.ReadByID(reader.GetInt32(1)), DP.ReadByID(2));
+                    ad = new Copy(DVG.ReadByID(reader.GetInt32(1)), DP.ReadByID(reader.GetInt32(2)));
                     ad.Id = reader.GetInt32(0);
                     if (!reader.IsDBNull(3))
                     {
@@ -138,6 +139,26 @@ namespace Projet_C.Management
             {
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "delete dbo.Copies where ID=@ID";
+                cmd.Parameters.AddWithValue("ID", ad.Id);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex) { Trace.WriteLine(ex.Message); }
+
+            cmd.Parameters.Clear();
+            connection.Close();
+            return true;
+        }
+        public Boolean Update(Copy ad)
+        {
+
+            connection.Open();
+            try
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update dbo.Copies set ID_VideoGame=@IDGAME,ID_Player_owner=@IDPLAYER where ID=@ID";
+                cmd.Parameters.AddWithValue("IDGAME", ad.Vd.Id);
+                cmd.Parameters.AddWithValue("IDPLAYER", ad.Pl_owner.Id_User);
                 cmd.Parameters.AddWithValue("ID", ad.Id);
                 cmd.ExecuteNonQuery();
 

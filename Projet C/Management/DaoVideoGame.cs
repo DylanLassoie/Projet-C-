@@ -152,6 +152,32 @@ namespace Projet_C.Management
             cmd.Parameters.Clear();
             connection.Close();
             return true;
+
+        }
+        public Boolean Update(VideoGame vd)
+        {
+            if (ReadByUnique(vd.Name, vd.Console) != null)
+            {
+                return false;
+
+            }
+            connection.Open();
+            try
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update dbo.VideoGames set name=@NAME,creditCost=@CC,console=@CONS where ID=@ID";
+                cmd.Parameters.AddWithValue("NAME", vd.Name);
+                cmd.Parameters.AddWithValue("CC", vd.CreditCost);
+                cmd.Parameters.AddWithValue("CONS", vd.Console);
+                cmd.Parameters.AddWithValue("ID", vd.Id);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex) { Trace.WriteLine(ex.Message); }
+
+            cmd.Parameters.Clear();
+            connection.Close();
+            return true;
         }
     }
 }

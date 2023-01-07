@@ -13,7 +13,7 @@ public class Player : User
     public Player(string pseudo, DateTime rd, DateTime dob)
 	{
         Credit = 0;
-        this.pseudo= pseudo;
+        Pseudo= pseudo;
         RegistrationDate = rd;  
         DateOfBirth = dob;  
 	}

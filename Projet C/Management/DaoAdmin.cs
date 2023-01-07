@@ -152,6 +152,25 @@ namespace Projet_C.Management
             connection.Close();
             return true;
         }
+        public void update(Admin ad)
+        {
+
+            connection.Open();
+            try
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update dbo.Admins set username=@USER,password=@PWD where id=@ID";
+                cmd.Parameters.AddWithValue("USER", ad.Username);
+                cmd.Parameters.AddWithValue("PWD", ad.Password);
+                cmd.Parameters.AddWithValue("ID", ad.Id_User);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex) { Trace.WriteLine(ex.Message); }
+
+            cmd.Parameters.Clear();
+            connection.Close();
+        }
 
 
     }
