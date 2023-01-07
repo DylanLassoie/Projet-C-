@@ -9,6 +9,7 @@ namespace Projet_C.Backend
     
     public abstract class User
     {
+        protected int id_User;
         protected string username;
         protected string password;
 
@@ -17,7 +18,9 @@ namespace Projet_C.Backend
             return true;
         }
         public string Username { get; set; }
-        public string Password { get; set; }    
+        public string Password { get; set; }
+
+        public int Id_User { get; set; }
     }
 
 }

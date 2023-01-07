@@ -23,7 +23,7 @@ namespace Projet_C
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Dao dao= new Dao();
+        private DaoAdmin dao= new DaoAdmin();
         public MainWindow()
         {
             InitializeComponent();
@@ -56,12 +56,12 @@ namespace Projet_C
 
         private void ShowUserList()
         {
-            dg_user.ItemsSource = dao.ReadAllAdmins();
+            dg_user.ItemsSource = dao.ReadAll();
         }
 
         private void ButtonLogin_OnClick(object sender, RoutedEventArgs e)
         {
-            Admin ad = dao.ReadByAdminUnique(login_user.Text,login_pwd.Password);
+            Admin ad = dao.ReadByUnique(login_user.Text,login_pwd.Password);
             //Trace.WriteLine(login_user.Text+ " "+ login_pwd.Password);
             if (ad==null)
             {
@@ -76,6 +76,9 @@ namespace Projet_C
 
         private void ButtonReg_OnClick(object sender, RoutedEventArgs e)
         {
+            Admin ad= new Admin(){ Username="Test",Password="Test"};
+            ad = dao.ReadUser(ad.Username);
+            Trace.WriteLine( dao.Delete(ad));
 
         }
     }
